@@ -24,7 +24,7 @@ class Spot:
 
 
 	def get_position(self):
-		return self.Xrow,self.Ycol
+		return self.row,self.col
 
 	def is_open(self):
 		return self.color==WHITE

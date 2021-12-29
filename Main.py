@@ -55,7 +55,7 @@ def make_grid(win,rows,width):
 
 def main(win,width):
 
-	rows=50
+	rows=40
 	grid=make_spot(rows,width)
 
 	run=True
@@ -114,7 +114,16 @@ def main(win,width):
 						for spot in line:
 							spot.update_negihbors(grid)
 
-					algo.dfs(lambda: draw_spots(win, grid, rows ,width), grid, start, end)			
+					algo.dfs(lambda: draw_spots(win, grid, rows ,width), grid, start, end)
+
+				if event.key==pygame.K_a:
+
+					#if event.key==pygame.K_SPACE:
+					for line in grid:
+						for spot in line:
+							spot.update_negihbors(grid)
+
+					algo.a_star(lambda: draw_spots(win, grid, rows ,width), grid, start, end)				
 
 
 				if event.key == pygame.K_c:
